@@ -21,29 +21,68 @@
 //* ---- Reducer - функція , яка приймає поточний стан та екшен і повертає новий стан ---
 //! ЕКШЕНИ описують тільки те, що сталося  а не як змінюється  стан програми
 
+//* ========================================BEFORE================================================
+
+import { createAction } from '@reduxjs/toolkit';
 import { nanoid } from 'nanoid';
+// import { nanoid } from 'nanoid';
 
-export const addContacts = (name, number) => {
-  return {
-    type: 'contacts/addContact',
-    payload: {
-      id: nanoid(),
-      name,
-      number,
-    },
-  };
-};
+// export const addContacts = (name, number) => {
+//   return {
+//     type: 'contacts/addContact',
+//     payload: {
+//       id: nanoid(),
+//       name,
+//       number,
+//     },
+//   };
+// };
 
-export const deleteContact = contactId => {
-  return {
-    type: 'contacts/deleteContact',
-    payload: contactId,
-  };
-};
+// export const deleteContact = contactId => {
+//   return {
+//     type: 'contacts/deleteContact',
+//     payload: contactId,
+//   };
+// };
 
-export const changeValueFilter = value => {
-  return {
-    type: 'filter/changeValueFilter',
-    payload: value,
-  };
-};
+// export const changeValueFilter = value => {
+//   return {
+//     type: 'filter/changeValueFilter',
+//     payload: value,
+//   };
+// };
+
+//*=============================================AFTER==========================================
+
+export const addContacts = createAction(
+  'contacts/addContact',
+  (name, number) => {
+    return {
+      payload: {
+        id: nanoid(),
+        name,
+        number,
+      },
+    };
+  }
+);
+
+export const deleteContact = createAction(
+  'contacts/deleteContact'
+  // ,
+  // contactId => {
+  //   return {
+  //     payload: contactId,
+  //   };
+  // }
+);
+
+export const changeValueFilter = createAction(
+  'filter/changeValueFilter'
+  // ,
+  // value => {
+  //   return {
+  //     payload: value,
+  //   };
+  // }
+);
