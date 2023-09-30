@@ -6,7 +6,7 @@ import {
   ResetButtons,
 } from './contatcFilter.styled';
 import { getFilter } from 'redux/selectors';
-import { changeValueFilter } from 'redux/actions';
+import { changeValueFilter } from 'redux/filterSlice';
 
 export const Filter = () => {
   const filter = useSelector(getFilter);

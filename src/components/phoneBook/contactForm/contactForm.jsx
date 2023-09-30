@@ -10,7 +10,7 @@ import {
 import { useDispatch, useSelector } from 'react-redux';
 import { getContacts } from 'redux/selectors';
 import toast, { Toaster } from 'react-hot-toast';
-import { addContacts } from 'redux/actions';
+import { addContacts } from 'redux/contactsSlice';
 
 const schema = yup.object().shape({
   name: yup
