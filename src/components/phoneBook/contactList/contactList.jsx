@@ -3,9 +3,9 @@ import { List, ListItem, Topic, ItemButton } from './contactList.styled';
 import { getContacts, getFilter } from 'redux/selectors';
 import { deleteContact } from 'redux/contactsSlice';
 
-
 export const ContactList = () => {
   const contacts = useSelector(getContacts);
+  console.log(contacts);
 
   const filter = useSelector(getFilter);
 
