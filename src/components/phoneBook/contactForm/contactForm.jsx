@@ -35,7 +35,7 @@ export const FormUser = () => {
 
   const handleSubmit = (values, { resetForm }) => {
     const { name, number } = values;
-    console.log(name);
+
     if (
       contacts.find(
         contact => contact.name.toLowerCase() === name.toLowerCase()

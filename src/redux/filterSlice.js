@@ -14,7 +14,10 @@ const filterSlice = createSlice({
   },
 });
 
-// console.dir(filterSlice)
-
 export const { changeValueFilter } = filterSlice.actions;
 export const filterReducer = filterSlice.reducer;
+
+//* Blacklist & Whitelist
+
+//Щоб зберегти все крім одного - blacklist: ['navigation]
+//Щоб зберегти тільки одне з багатьох - whitelist: ['navigation]
